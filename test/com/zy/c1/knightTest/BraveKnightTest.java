@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.zy.c1.knight.BraveKnight;
+import com.zy.c1.knight.Minstrel;
 import com.zy.c1.quest.Quest;
 
 public class BraveKnightTest {
@@ -22,7 +23,8 @@ public class BraveKnightTest {
 	@Test
 	public void knightShouldEmbarkOnQuest() {
 		Quest mockQuest = mock(Quest.class);
-		BraveKnight knight = new BraveKnight(mockQuest);
+		Minstrel mockMinstrel = mock(Minstrel.class);
+		BraveKnight knight = new BraveKnight(mockQuest,mockMinstrel);
 		knight.embarkOnQuest();
 		verify(mockQuest, times(1)).embark();
 	}
